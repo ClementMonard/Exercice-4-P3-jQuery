@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>Exercice 4 partie 3</title>
+  <script src="jquery-3.2.1.js"></script>
+</head>
+<body>
+  <button type="button" name="button" id="buttonAddHeightReset">Augmente sa taille !</button>
+  <button type="button" name="button" id="buttonColor">Met moi en couleur !</button>
+  <button type="button" name="button" id="buttonResetColor">Enlève moi cette couleur !</button>
+  <button type="button" name="button" id="buttonDisappear">Fais moi disparaître !</button>
+  <button type="button" name="button" id="buttonAppear">Fais moi revenir !</button>
+  <div id="rectangle" style="height: 10px; width: 100px; background-color: black;"></div>
+</body>
+<script>
+var height = 10;
+//Fonction qui permet d'ajouter une hauteur de px à chaque cliques en imposant une limite de 100px
+$('#buttonAddHeightReset').click(function(){
+  //Si la hauteur est égale à 100
+  if(height == 100){
+    //La hauteur revient à 10px
+    height = 10;
+    //Mise en place du css
+    $('#rectangle').css('height', height + 'px');
+    //Sinon
+  }else{
+    //On augmente la hauteur de 10px
+    height += 10;
+    //Mise en place du css
+    $('#rectangle').css('height', height + 'px');
+  }
+});
+//Permet au rectangle d'avoir la couleur verte
+$('#buttonColor').click(function(){
+  $('#rectangle').css('background-color' , 'green');
+});
+//Permet au rectangle de revenir a sa couleur initial
+$('#buttonResetColor').click(function(){
+  $('#rectangle').css('background-color' , 'black');
+});
+//Permet au rectangle d'être caché
+$('#buttonDisappear').click(function(){
+  $('#rectangle').hide();
+});
+//Permet de réafficher le rectangle
+$('#buttonAppear').click(function(){
+  $('#rectangle').show();
+});
+</script>
+</html>
